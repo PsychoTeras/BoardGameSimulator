@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68C03465-DC12-4093-AD44-FA31C8975B7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BoardGameSimulator</RootNamespace>
+    <AssemblyName>BoardGameSimulator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>_bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>_bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\application_x64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>Assemblies\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>Assemblies\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Common\CheckBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\Header.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\Header.Designer.cs">
+      <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\TransparentPanel.Designer.cs">
+      <DependentUpon>TransparentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\Map.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Map\Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\MapItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Map\MapItem.Designer.cs">
+      <DependentUpon>MapItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\ItemControls\IItemControl.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemButton.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemControlHelper.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemControlState.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemControlType.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemControlTypes.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemImage.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemLinkPoint.cs" />
+    <Compile Include="Controls\Map\ItemControls\ItemScrollBar.cs" />
+    <Compile Include="Controls\Map\ItemElements\IItemElement.cs" />
+    <Compile Include="Controls\Map\ItemElements\ItemElementType.cs" />
+    <Compile Include="Controls\Map\ItemElements\ItemGroup.cs" />
+    <Compile Include="Controls\Map\ItemElements\ItemGroupElement.cs" />
+    <Compile Include="Controls\Map\ItemElements\ItemGroupElementsList.cs" />
+    <Compile Include="Controls\Map\ItemElements\ItemGroupsList.cs" />
+    <Compile Include="Controls\Map\ItemPainters\IItemPainter.cs" />
+    <Compile Include="Controls\Map\ItemPainters\ItemPainterHelper.cs" />
+    <Compile Include="Controls\Map\ItemPainters\ItemPaintersList.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_Base.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_BaseGradient.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_BlackGradient.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_BlueGradient.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_OrangeGradient.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_WhiteGradient.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_YellowGradient.cs" />
+    <Compile Include="Controls\Map\ItemPainters\Painters\ItemPainter_ZTest.cs" />
+    <Compile Include="Controls\Map\ItemPainters\WorkplaceBuffer.cs" />
+    <Compile Include="Controls\Map\ItemResizePosition.cs" />
+    <Compile Include="Controls\Map\LinkingArrowControl\LinkingArrow.cs" />
+    <Compile Include="Controls\Map\LinkingArrowControl\LinkingArrowState.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Common\Header.resx">
+      <DependentUpon>Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Common\TransparentPanel.resx">
+      <DependentUpon>TransparentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Map\Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Map\MapItem.resx">
+      <DependentUpon>MapItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Map\Resources\EditMode.png" />
+    <Content Include="Resources\application_x64.ico" />
+    <Content Include="Resources\application_x16.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
