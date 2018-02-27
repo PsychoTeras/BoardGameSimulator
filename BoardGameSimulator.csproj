@@ -45,6 +45,9 @@
     <Reference Include="Ionic.Zip">
       <HintPath>Assemblies\Ionic.Zip.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assemblies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
@@ -59,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\GameProject\BaseModules\FileResourceGPM.cs" />
+    <Compile Include="Classes\GameProject\Modules\BackgroundGPM.cs" />
+    <Compile Include="Classes\GameProject\IGameProjectModule.cs" />
+    <Compile Include="Classes\GameProject\BaseModules\GenericGPM.cs" />
+    <Compile Include="Classes\GameProject\ModuleType.cs" />
+    <Compile Include="Classes\GameProject\GameProject.cs" />
     <Compile Include="Controls\Common\CheckBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>

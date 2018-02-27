@@ -78,8 +78,7 @@ namespace BoardGameSimulator.Controls.Map
 
 #region Constants
 
-        private static readonly Rectangle DefaultItemClientRectangle = new
-            Rectangle(30, 30, 250, 250);
+        private static readonly Rectangle _defaultItemClientRectangle = new Rectangle(30, 30, 250, 250);
 
 #endregion
 
@@ -541,12 +540,12 @@ namespace BoardGameSimulator.Controls.Map
 
         public MapItem AddItem(string caption)
         {
-            return AddItem(caption, string.Empty, DefaultItemClientRectangle, null);
+            return AddItem(caption, string.Empty, _defaultItemClientRectangle, null);
         }
 
         public MapItem AddItem(string caption, string skinName)
         {
-            return AddItem(caption, skinName, DefaultItemClientRectangle, null);
+            return AddItem(caption, skinName, _defaultItemClientRectangle, null);
         }
 
         public MapItem AddItem(string caption, string skinName,
